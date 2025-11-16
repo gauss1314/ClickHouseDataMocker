@@ -1,0 +1,22 @@
+# ClickHouse连接配置示例
+# 复制此文件为 clickhouse.conf 并根据实际环境修改
+
+# 数据库连接参数
+CH_HOST="localhost"
+CH_PORT="9000"
+CH_USER="default"
+CH_PASSWORD=""
+CH_DATABASE="default"
+
+# 流控参数（设置较低值以快速触发流控）
+PARTS_TO_DELAY_INSERT=50
+PARTS_TO_THROW_INSERT=100
+MAX_PARTITIONS_PER_INSERT_BLOCK=100
+
+# 插入参数
+BATCH_SIZE=100000
+INSERT_INTERVAL=1
+MAX_INSERT_COUNT=60
+
+# 日志配置
+LOG_LEVEL="INFO"
